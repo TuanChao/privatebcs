@@ -1,0 +1,104 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Checkout code
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+    
+    # Setup Node.js for Frontend
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'yarn'
+        cache-dependency-path: 'frontend/yarn.lock'
+        
+    # Build Frontend
+    - name: 📦 Install Frontend Dependencies
+      run: |
+        cd frontend
+        yarn install --frozen-lockfile
+        
+    - name: 🏗️ Build Frontend
+      run: |
+        cd frontend
+        yarn build
+    
+    # Setup .NET for Backend
+    - name: 🔷 Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+        
+    # Build Backend
+    - name: 🔨 Restore Backend Dependencies
+      run: |
+        cd api
+        dotnet restore
+        
+    - name: 🏗️ Build Backend
+      run: |
+        cd api
+        dotnet build -c Release --no-restore
+        
+    - name: 📋 Test Backend
+      run: |
+        cd api
+        dotnet test --no-build --verbosity normal
+        
+    - name: 📦 Publish Backend
+      run: |
+        cd api
+        dotnet publish -c Release -o ./publish --no-build
+    
+    # Deploy to Server (only on main branch)
+    - name: 🚀 Deploy to Server
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
+        port: ${{ secrets.SERVER_PORT || 22 }}
+        script: |
+          echo "🔄 Starting deployment..."
+          
+          # Navigate to app directory
+          cd /var/www/your-app
+          
+          # Stop application
+          sudo systemctl stop your-app || true
+          
+          # Backup current version
+          sudo cp -r . ../backup-$(date +%Y%m%d_%H%M%S) || true
+          
+          # Pull latest code
+          git pull origin main
+          
+          # Copy build files (if needed)
+          # sudo cp -r frontend/build/* /var/www/html/
+          
+          # Start application
+          sudo systemctl start your-app
+          sudo systemctl status your-app
+          
+          echo "✅ Deployment completed!"
+    
+    # Notify on success/failure
+    - name: 📧 Notify on Success
+      if: success()
+      run: echo "✅ Build and deploy successful!"
+      
+    - name: ❌ Notify on Failure  
+      if: failure()
+      run: echo "❌ Build or deploy failed!"
