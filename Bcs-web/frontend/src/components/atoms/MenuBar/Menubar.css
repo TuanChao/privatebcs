@@ -1,0 +1,240 @@
+
+.menubar {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    z-index: 994;
+    padding: 22px 50px 22px 166px;
+    border-top: 1px solid #ffffff4a;
+    border-bottom: 1px solid #ffffff4a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    column-gap: 52px;
+}
+
+.nav-item {
+    margin: 0 20px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 700;
+    transition: color 0.3s;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px; 
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(90deg, #F0551F, #F0551F);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.86,0,0.07,1);
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.nav-item:hover {
+    color: #F0551F;
+    opacity: 1;
+}
+
+.nav-item:hover::after {
+    transform: scaleX(1);
+}
+
+.social-icon a:hover {
+    opacity: .5;
+}
+
+/* Progress Bar */
+.progress {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    background: #fff;
+    transition: width 0.2s ease-out;
+    border-radius: 0;
+    z-index: 9990;
+}
+
+.icon-menu {
+    display: none;
+    z-index: 9991;
+    gap: 20px;
+}
+
+.menubar .logo-white {
+    display: none;
+    transition: transform 0.2s;
+}
+
+.menubar .logo-white:hover {
+    transform: scale(1.08) rotate(-5deg);
+}
+
+/* Social Icon Styling */
+.social-icon {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.social-icon a {
+    color: var(--white-color, #fff);
+}
+
+/* Mobile Menu Styling */
+.menu-mobile-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    background: linear-gradient(45deg, #ffffff, #c2934c, #3533ca, #F0551F);
+    background-size: 300% 300%;
+    animation: animatedBackground 5s infinite alternate ease-in-out;
+}
+
+@keyframes animatedBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.menu-mobile-container.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.nav-mobile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.nav-list-mobile {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 25px;
+    flex-direction: column;
+}
+
+.nav-item-mobile {
+    font-family: Saira, "sans-serif";
+    margin: 0 20px;
+    cursor: pointer;
+    font-size: 27px;
+    color: white;
+    transition: color 0.3s;
+    font-weight: 600;
+    line-height: 34px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+/* Hiệu ứng underline cho mobile menu luôn, thích thì giữ lại, không thì bỏ! */
+.nav-item-mobile::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(90deg, #f9d423, #ff4e50);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.86,0,0.07,1);
+    border-radius: 2px;
+    pointer-events: none;
+}
+.nav-item-mobile:hover::after {
+    transform: scaleX(1);
+}
+
+.icon-menu-close {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav {
+        font-size: 14px;
+        background-color: transparent;
+    }
+
+    .menubar {
+        background-color: transparent;
+        justify-content: space-between;
+        padding: 22px;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .nav-item {
+        margin: 0 10px;
+    }
+
+    .progress {
+        display: block;
+        background: hsla(0, 0%, 100%, .1);
+        height: 3px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+    }
+
+    .icon-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menubar .logo-white {
+        display: block;
+    }
+
+    .social-icon {
+        display: none;
+    }
+}

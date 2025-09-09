@@ -1,0 +1,38 @@
+.docs-banner-container {
+    display: flex;
+    background-color: transparent;
+    margin: 35px 0;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 300px; /* Set a fixed height for the banner */
+}
+
+.image-banner-docs {
+    background-color: transparent;
+    display: flex;
+    width: 100%; /* Adjust width to accommodate all images */
+    animation: slide 30s infinite;
+}
+
+.img-banner-docs {
+    width: 100%;
+    flex: 1 0 100%;
+    object-fit: cover; /* Ensure the images cover the container /
+    height: 300px; / Ensure the images take the full height of the container */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+    33% {
+        transform: translateX(-100%);
+    }
+    66% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}

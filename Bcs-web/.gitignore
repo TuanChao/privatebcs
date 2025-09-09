@@ -1,0 +1,25 @@
+node_modules/
+dist/
+.env
+npm-debug.log
+.DS_Store
+# Hệ điều hành
+.DS_Store
+Thumbs.db
+api/bin/
+./api/bin/
+.api/bin/
+./api/obj/debug/
+
+
+
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+.fake

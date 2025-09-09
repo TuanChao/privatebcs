@@ -1,0 +1,44 @@
+.backdrop-section-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+.backdrop-logo {
+    max-width: 500px;
+    margin-top: 130px;
+    /* margin-bottom: 30px; */
+    z-index: 1;
+}
+
+.logo-under-ground,
+.logo-under-ground1 {
+    background-image: url(/src/assets/images/1.png);
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: center;
+    z-index: 0;
+    transform: rotate(-8.3deg);
+    position: absolute;
+    width: 200%;
+    top: 0;
+    left: 0;
+    height: 500px;
+    opacity: .1;
+    filter: blur(4px);
+}
+
+.logo-under-ground1 {
+    top: 650px !important;
+}
+
+.backdrop-banner {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}

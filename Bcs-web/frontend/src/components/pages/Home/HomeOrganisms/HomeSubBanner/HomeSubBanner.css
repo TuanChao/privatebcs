@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
+
+body {
+    font-family: 'Saira', sans-serif;
+}
+
+.sub-banner-container {
+    width: 100%;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sub-banner {
+    max-width: 1440px;
+}
+
+.sub-banner-image {
+    max-height: 792px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: .5rem;
+}
+
+.vision-content {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    margin-bottom: 30px;
+}
+
+.vision-content-text {
+    color: #ffffff;
+    --darkreader-text--tw-text-opacity: 1;
+    font-weight: bold;
+    line-height: 1;
+    font-size: 20px;
+}
+
+.sub-banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-content {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.sub-banner-team-name {
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: -.05em;
+    margin-bottom: 20px;
+}
+
+.sub-banner-team-description {
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: -.03em;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.sub-big-banner {
+    border-radius: 30px;
+    margin-top: 180px;
+}

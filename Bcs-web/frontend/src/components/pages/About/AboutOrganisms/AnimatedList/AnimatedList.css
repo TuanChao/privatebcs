@@ -1,0 +1,99 @@
+.scroll-list-container {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  min-width: 220px;
+  margin: 0 auto;
+}
+
+.scroll-list {
+  max-height: 650px;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+/* Chrome, Edge, Safari */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox + IE/Edge */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.item-wrapper {
+  outline: none;
+}
+
+/* Ví dụ: style item, bạn có thể custom thêm */
+.item {
+  padding: 16px;
+  background-color: #170d27;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: background 0.2s;
+}
+
+.item.selected {
+  background-color: #271e37;
+}
+
+.item-text {
+  color: white;
+  margin: 0;
+}
+
+/* Gradient hiệu ứng */
+.top-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(to bottom, #060010, transparent);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.bottom-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, #060010, transparent);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Responsive cho tablet */
+@media (max-width: 900px) {
+  .scroll-list-container {
+    max-width: 98vw;
+    min-width: 0;
+    padding: 0 8px;
+  }
+  .scroll-list {
+    max-height: 340px;
+    padding: 8px 2px;
+  }
+}
+
+/* Responsive cho mobile */
+@media (max-width: 600px) {
+  .scroll-list-container {
+    max-width: 100vw;
+    min-width: 0;
+    padding: 0 1vw;
+  }
+  .scroll-list {
+    max-height: 180px;
+    padding: 4px 0;
+  }
+  .item {
+    padding: 8px 4px;
+    font-size: 0.95em;
+  }
+}

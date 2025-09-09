@@ -1,0 +1,215 @@
+.timeline-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto 0 auto;
+  font-family: 'Saira', sans-serif;
+  padding: 30px 20px 50px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+
+.timeline-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 2em;
+}
+
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #ffffff;
+}
+
+.timeline-item {
+  background: rgba(0, 0, 0, 0.6);
+  border-left: 5px solid #F0551F;
+  border-radius: 7px;
+  padding: 18px 14px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.18s;
+  word-break: break-word;
+  white-space: normal;
+  overflow: visible;
+  height: auto;
+  min-height: 60px;
+  line-height: 1.65;
+  font-size: 1.08em;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.timeline-item.selected,
+.timeline-item:hover {
+  background: #F0551F;
+  color: #fff;
+  transform: scale(1.03);
+  border-left-color: #fff;
+  z-index: 2;
+}
+
+.timeline-header {
+  font-weight: bold;
+  font-size: 1.07em;
+  margin-bottom: 6px;
+  letter-spacing: 0.03em;
+}
+
+.timeline-content {
+  padding: 0;
+  font-size: 0.98em;
+  color: #f1f1f1;
+}
+
+.timeline-item:not(:last-child)::after {
+  /* vẽ vạch timeline nhỏ ở giữa các item (tùy thích, có thể xóa nếu không cần) */
+  content: '';
+  position: absolute;
+  left: 12px;
+  bottom: -14px;
+  width: 2px;
+  height: 14px;
+  background: #F0551F;
+  opacity: 0.45;
+}
+
+/* Responsive cải thiện */
+@media (max-width: 900px) {
+  .timeline-container {
+    width: 95vw;
+    max-width: 95vw;
+    padding: 20px 10px;
+    margin: 15px auto 0 auto;
+  }
+  .timeline-title {
+    font-size: 1.5em;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  .timeline-list {
+    gap: 14px;
+  }
+  .timeline-item {
+    padding: 16px 12px;
+    font-size: 1.02em;
+    line-height: 1.6;
+    min-height: 55px;
+  }
+  .timeline-header {
+    font-size: 1.05em;
+    margin-bottom: 8px;
+  }
+  .timeline-content {
+    font-size: 0.98em;
+  }
+}
+
+@media (max-width: 600px) {
+  .timeline-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 15px 40px 15px;
+    margin: 15px 0 0 0;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+  }
+  .timeline-title {
+    font-size: 1.3em;
+    margin-bottom: 12px;
+    padding: 0 12px;
+    text-align: center;
+  }
+  .timeline-list {
+    gap: 12px;
+    padding: 0 8px;
+  }
+  .timeline-item {
+    padding: 14px 10px;
+    font-size: 1em;
+    line-height: 1.5;
+    min-height: 50px;
+    border-left-width: 3px;
+  }
+  .timeline-header {
+    font-size: 1em;
+    margin-bottom: 6px;
+  }
+  .timeline-content {
+    font-size: 0.95em;
+  }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 480px) {
+  .timeline-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px 12px 30px 12px;
+    margin: 10px 0 0 0;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 6px;
+  }
+  .timeline-title {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    padding: 0 8px;
+  }
+  .timeline-list {
+    gap: 10px;
+    padding: 0 6px;
+  }
+  .timeline-item {
+    padding: 12px 8px;
+    font-size: 0.95em;
+    line-height: 1.4;
+    min-height: 45px;
+    border-left-width: 3px;
+    border-radius: 5px;
+  }
+  .timeline-header {
+    font-size: 0.95em;
+    margin-bottom: 5px;
+  }
+  .timeline-content {
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+  .timeline-item:not(:last-child)::after {
+    display: none; /* Ẩn đường kẻ trên mobile nhỏ */
+  }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 768px) {
+    .timeline-container {
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+    }
+    .timeline-item {
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+    }
+  }
+}
+
+/* Landscape mobile */
+@media (max-width: 900px) and (orientation: landscape) {
+  .timeline-container {
+    padding: 15px 8px;
+  }
+  .timeline-title {
+    font-size: 1.4em;
+    margin-bottom: 12px;
+  }
+  .timeline-item {
+    padding: 12px 10px;
+    min-height: 40px;
+  }
+}
+

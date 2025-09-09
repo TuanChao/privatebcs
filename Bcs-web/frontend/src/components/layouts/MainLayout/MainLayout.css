@@ -1,0 +1,28 @@
+.main-layout {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    color: #ffffff;
+    background: linear-gradient(45deg, #ffffff, #686868, #222222, #F0551F);
+    background-size: 300% 300%;
+    animation: animatedBackground 5s infinite alternate ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .main-layout {
+        padding: 0; /* Bỏ padding để tránh thụt vào */
+    }
+}
+
+@keyframes animatedBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

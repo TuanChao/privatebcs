@@ -1,0 +1,33 @@
+const routesName = {
+  ROOT: "/",
+  // GALLERY: "/gallery",
+  ABOUT: "/about",
+  // ORDER: "/order",
+  NEWS: "/news",
+  // DOCS: "/Docs",
+  NEWS_DETAIL: "/news/:id",
+  PRODUCT: "/product",
+  PRODUCT_DETAIL: "/product/:id",
+  DARKMODE: "/darkmode",
+  SERVICE: "/Service",
+  SERVICE_DETAIL : "/service/:id",
+  SOC: "/soc",
+  SOC_PRODUCT: "/socproduct/:id",
+  LOGIN: "/Login",
+  ADMIN: "/admin",
+  ADMIN_USER: "/admin/user",
+  ADMIN_POSTER: "/admin/poster",
+  ADMIN_NEWS: "/admin/news",
+  ADMIN_SERVICE: "/admin/service",
+  ADMIN_PRODUCT: "/admin/products",
+  ADMIN_INTRODUCE: "/admin/introduce",
+  ADMIN_ABOUTCONTENT: "/admin/aboutcontent",
+  ADMIN_BANNER : "/admin/newsbanner",
+  ADMIN_PRODUCT_BANNER : "/admin/productbanner",
+  PRODUCT_BANNER_DETAIL: "/productbanner/:id",
+  ADMIN_SERVICE_BANNER : "/admin/servicebanner",
+  SERVICE_BANNER_DETAIL: "/servicebanner/:id",
+  
+};
+
+export default routesName;

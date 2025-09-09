@@ -1,0 +1,40 @@
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 45px;
+    width: 73px;
+    height: 100vh;
+    overflow-y: auto;
+    
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-left: 0.5px solid transparent ;
+    border-right: 0.5px solid transparent;
+    z-index: 995;
+}
+
+#progress-bar {
+    width: 100%;
+    height: 0;
+    background: transparent;
+    transition: height 0.5s ease-out;
+    max-height: calc(100vh - 48px);
+
+   
+}
+
+#progress-container .logo-black {
+    position: absolute;
+    top: 15px;
+}
+
+@media (max-width: 768px) {
+    #progress-container {
+        display: none;
+    }
+
+    #progress-bar {
+        display: none;
+    }
+}
+

@@ -1,0 +1,99 @@
+.home-container {
+    width: 100%;
+    font-family: "Saira", serif;
+    margin: 0; /* Đảm bảo không có margin */
+    padding: 0; /* Bỏ padding outer */
+}
+
+.home-content-container {
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Cho tất cả các component con trong home */
+.home-banner,
+.home-news-container,
+.home-sub-banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+    .home-content-container {
+        padding: 0 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .home-container {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+    
+    .home-content-container {
+        padding: 0;
+        width: 100%;
+    }
+    
+    /* Đặc biệt cho HomeBanner */
+    .home-banner {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        left: 0;
+        right: 0;
+    }
+}
+
+/* iOS Safari specific */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 768px) {
+        .home-banner {
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+        }
+    }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 480px) {
+    .home-content-container {
+        padding: 0 8px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+    .home-content-container {
+        padding: 0 50px;
+    }
+}
+
+/* Quick fix cho iPhone - thêm vào cuối */
+@media (max-width: 768px) {
+    .home-banner {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        position: relative;
+        left: 0;
+        right: 0;
+    }
+}
+
+/* iPhone specific */
+@media (max-width: 414px) {
+    .home-banner {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+    }
+}

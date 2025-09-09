@@ -1,0 +1,49 @@
+.home-team-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.home-team {
+    max-width: 1440px;
+    width: 100%;
+}
+
+.team-title-container {
+    width: 100%;
+}
+
+.team-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.team-title {
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: -.05em;
+    font-size: 32px;
+}
+
+.team-sub-title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: -.03em;
+}
+
+@media (min-width: 768px) {
+    .team-title {
+        font-size: 56px;
+    }
+
+    .team-sub-title {
+        font-weight: 700;
+        font-size: 16px;
+    }
+}

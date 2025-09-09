@@ -1,0 +1,149 @@
+.dashboard-root {
+  padding: 16px 4px 10px 4px;
+  min-height: 100vh;
+  /* background: linear-gradient(135deg, #f7f8fa 60%, #e0e7ff 100%); */
+  background-color: transparent;
+}
+
+.dashboard-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 16px;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.dashboard-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.dashboard-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(30,40,90,0.07);
+  padding: 12px 8px 8px 8px;
+  min-width: 120px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-card-outer {
+  position: relative;
+  border-radius: 20px;
+  padding: 2px; /* Độ dày viền */
+  background: linear-gradient(270deg, #2563eb, #f59e42, #22c55e, #a855f7, #ef4444, #eab308, #2563eb);
+  background-size: 1200% 1200%;
+  animation: border-gradient-move 4s linear infinite;
+  margin: 0 1px;
+}
+
+@keyframes border-gradient-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 6px 24px rgba(30,40,90,0.13);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.dashboard-icon {
+  font-size: 1.2rem;
+  opacity: 0.93;
+  margin-right: 3px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.04));
+}
+
+/* Icon colors for dashboard cards */
+.dashboard-icon.users { color: #007bff; }
+.dashboard-icon.posters { color: #6f42c1; }
+.dashboard-icon.products { color: #28a745; }
+.dashboard-icon.product-banners { color: #17a2b8; } /* Thêm màu cho product banner */
+.dashboard-icon.services { color: #fd7e14; }
+.dashboard-icon.service-banners { color: #20c997; } /* Thêm màu cho service banner */
+.dashboard-icon.news { color: #dc3545; }
+.dashboard-icon.views { color: #6c757d; }
+
+/* Hover effects for new banner cards */
+.dashboard-card-outer-link:hover .dashboard-icon.product-banners {
+  color: #138496;
+  text-shadow: 0 0 10px rgba(23, 162, 184, 0.5);
+}
+
+.dashboard-card-outer-link:hover .dashboard-icon.service-banners {
+  color: #1ba085;
+  text-shadow: 0 0 10px rgba(32, 201, 151, 0.5);
+}
+
+.dashboard-number {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #181c23;
+  margin-bottom: 0;
+  text-align: left;
+  letter-spacing: 0.01em;
+}
+
+.dashboard-label {
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.dashboard-welcome {
+  margin: 18px auto 0 auto;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(30,40,90,0.06);
+  padding: 10px 6px;
+  text-align: center;
+}
+
+.dashboard-welcome h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a2233;
+  margin-bottom: 4px;
+}
+
+.dashboard-welcome p {
+  color: #444;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.dashboard-card-outer-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+@media (max-width: 900px) {
+  .dashboard-stats {
+    gap: 10px;
+  }
+  .dashboard-card {
+    min-width: 100px;
+    padding: 6px 4px 5px 4px;
+  }
+  .dashboard-number { font-size: 0.95rem; }
+  .dashboard-icon { font-size: 1rem; }
+}
+
+@media (max-width: 600px) {
+  .dashboard-root { padding: 5px 0px 2px 0px; }
+  .dashboard-title { font-size: 1.05rem; }
+  .dashboard-card { min-width: 70px; }
+  .dashboard-welcome { padding: 8px 2px; }
+  .dashboard-label { font-size: 0.93rem; }
+}

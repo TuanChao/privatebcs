@@ -1,0 +1,1 @@
+export {default} from "./Product" ; // Ensure that the file './ProductPage.tsx' exists in the same directory

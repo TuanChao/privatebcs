@@ -1,0 +1,351 @@
+.soc-product-detail {
+    font-family: 'Saira', sans-serif;
+    line-height: 1.6;
+    background: url('src/assets/bcs-banner-soc2.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh; /* Đảm bảo full height màn hình */
+    width: 100vw; /* Full width */
+    margin: 0; /* Bỏ margin */
+    padding: 0; /* Bỏ padding outer */
+    box-sizing: border-box;
+    position: relative; /* Để background cover hết */
+    overflow-x: hidden; /* Tránh scroll ngang */
+    
+    /* Overlay để làm tối background */
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.16);
+        z-index: -1;
+    }
+}
+
+/* Container inner để chứa content với padding phù hợp */
+.soc-product-inner {
+    padding: 0px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 100%;
+}
+
+.soc-product-container{
+    padding : 150px 60px 80px 60px;
+    font-family: 'Saira', sans-serif !important;
+    display: flex;
+}
+
+.soc-product-detail-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    padding: 60px 40px;
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, 0.8); /* Tăng opacity từ 0.7 lên 0.8 */
+    color: #ffffff;
+    text-align: center;
+    backdrop-filter: blur(15px); /* Tăng blur từ 10px lên 15px */
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5); /* Tăng shadow */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Thêm border nhẹ */
+}
+
+.soc-product-detail-top-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.soc-product-detail-content {
+    margin-top: clamp(48px, 6vw, 64px);
+    padding: clamp(24px, 5vw, 36px);
+    background-color: rgba(0,0,0,0.6); /* Tăng từ 0.6 lên 0.8 */
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    line-height: 1.7;
+    width: 90%;
+    min-width: 320px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+    overflow-x: hidden; /* Tránh overflow ngang */
+    word-wrap: break-word; /* Break long words */
+    backdrop-filter: blur(10px); /* Thêm blur */
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Thêm shadow */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Thêm border nhẹ */
+}
+
+/* Style cho ảnh trong content HTML từ Quill */
+.soc-product-detail-content img {
+    max-width: 100% !important;
+    height: auto !important;
+    width: auto !important;
+    display: block;
+    margin: 16px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+/* Style cho video nếu có */
+.soc-product-detail-content video {
+    max-width: 100% !important;
+    height: auto !important;
+    width: auto !important;
+    display: block;
+    margin: 16px auto;
+    border-radius: 8px;
+}
+
+/* Style cho iframe/embed content */
+.soc-product-detail-content iframe {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 16px auto;
+    border-radius: 8px;
+}
+
+/* Style cho tables nếu có */
+.soc-product-detail-content table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
+}
+
+/* Style cho các phần tử khác trong content */
+.soc-product-detail-content p,
+.soc-product-detail-content h1,
+.soc-product-detail-content h2,
+.soc-product-detail-content h3,
+.soc-product-detail-content h4,
+.soc-product-detail-content h5,
+.soc-product-detail-content h6 {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Style cho danh sách */
+.soc-product-detail-content ul,
+.soc-product-detail-content ol {
+    padding-left: 20px;
+    max-width: 100%;
+}
+
+.soc-product-detail-content li {
+    margin-bottom: 8px;
+    word-wrap: break-word;
+}
+
+/* Bỏ các CSS không cần thiết cho image */
+/* .soc-product-detail-top-left, .soc-product-detail-top-right, .soc-product-dentail-image đã được xóa */
+
+.soc-product-detail-name{
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    line-height: 1.2;
+    color: #ffffff;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    letter-spacing: -0.5px;
+}
+
+.soc-product-detail-title{
+    color: #f0f0f0;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    line-height: 1.6;
+    font-weight: 400;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@keyframes animatedBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.soc-product-title{
+    font-size: clamp(1rem, 3vw, 1.2rem); /* Font size linh hoạt */
+    font-weight: bold;
+    line-height: 1.3;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 50px;
+    text-decoration: none;
+}
+
+.soc-product-description{
+    padding-top: 50px;
+    margin-bottom: 50px;
+    text-decoration: none;
+}
+
+.soc-product-description h3{
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.soc-product-description p{
+    font-size: clamp(1rem, 3vw, 1.2rem); /* Font size linh hoạt */
+    color: #FFFFFF;
+    text-align: left;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.soc-product-des-content{
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: #FFFFFF;
+    text-align: left;
+    padding-bottom: 20px;
+    text-decoration: none;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    line-height: 1.5;
+}
+
+.soc-product-des-content h3{
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: left;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+    .soc-product-detail-top {
+        padding: 80px 60px;
+        max-width: 900px;
+    }
+    
+    .soc-product-detail-name {
+        font-size: clamp(3rem, 7vw, 5rem);
+        margin-bottom: 25px;
+    }
+    
+    .soc-product-detail-title {
+        font-size: clamp(1.2rem, 3vw, 1.6rem);
+        max-width: 700px;
+    }
+    
+    .soc-product-inner {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+/* Mobile responsive - Điều chỉnh cho background */
+@media (max-width: 767px) {
+    .soc-product-detail {
+        background-attachment: scroll; /* Thay fixed thành scroll cho mobile */
+    }
+    
+    .soc-product-detail-top {
+        padding: 40px 20px;
+        max-width: 95%;
+        background-color: rgba(0, 0, 0, 0.85); /* Tăng opacity cho mobile */
+    }
+    
+    .soc-product-detail-name {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        margin-bottom: 15px;
+    }
+    
+    .soc-product-detail-title {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+    
+    .soc-product-inner {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .soc-product-detail-content {
+        width: 95%;
+        padding: 20px 15px;
+        background-color: rgba(0,0,0,0.85); /* Tăng opacity cho mobile */
+    }
+    
+    /* Ảnh trong content trên mobile */
+    .soc-product-detail-content img {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 12px 0;
+    }
+    
+    /* Text trong content */
+    .soc-product-detail-content p,
+    .soc-product-detail-content div {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 480px) {
+    .soc-product-detail-top {
+        padding: 30px 15px;
+        max-width: 98%;
+    }
+    
+    .soc-product-detail-name {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+        margin-bottom: 12px;
+    }
+    
+    .soc-product-detail-title {
+        font-size: clamp(0.9rem, 4vw, 1.1rem);
+    }
+    
+    .soc-product-inner {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .soc-product-detail-content {
+        width: 98%;
+        padding: 15px 10px;
+        margin-top: 20px;
+    }
+    
+    /* Ảnh trong content trên mobile nhỏ */
+    .soc-product-detail-content img {
+        margin: 10px 0;
+        border-radius: 6px;
+    }
+    
+    /* Font size nhỏ hơn */
+    .soc-product-detail-content {
+        font-size: 0.9rem;
+    }
+}

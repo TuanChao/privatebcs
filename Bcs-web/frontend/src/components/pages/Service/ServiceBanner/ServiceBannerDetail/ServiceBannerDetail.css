@@ -1,0 +1,433 @@
+/* ========== ServiceBanner Detail Container ========== */
+.service-banner-detail {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+  min-height: 100vh;
+  width: 1000vh;
+  color: #f8f9fa;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.service-banner-detail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(40, 167, 69, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(32, 201, 151, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(23, 162, 184, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ========== Top Section ========== */
+.service-banner-detail-top {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  padding: 40px 5% 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  align-items: start;
+}
+
+.service-banner-detail-top-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-right: 20px;
+}
+
+.service-banner-detail-name {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #28a745, #20c997, #17a2b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  text-shadow: 0 0 30px rgba(40, 167, 69, 0.3);
+}
+
+.service-banner-detail-title {
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  line-height: 1.6;
+  color: #e9ecef;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px 28px;
+  border-radius: 16px;
+  border-left: 4px solid #28a745;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+/* ========== Download Section ========== */
+.service-banner-detail-download {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.download-btn-nice {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 8px 25px rgba(40, 167, 69, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.download-btn-nice::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.download-btn-nice:hover::before {
+  left: 100%;
+}
+
+.download-btn-nice:hover {
+  background: linear-gradient(135deg, #20c997, #17a2b8);
+  transform: translateY(-3px);
+  box-shadow: 
+    0 12px 35px rgba(40, 167, 69, 0.4),
+    0 6px 16px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.download-btn-nice:active {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 6px 20px rgba(40, 167, 69, 0.3),
+    0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn-nice i {
+  font-size: 1.3rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* ========== Image Section ========== */
+.service-banner-detail-top-right {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+.service-banner-detail-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 8px 25px rgba(40, 167, 69, 0.2);
+  border: 2px solid rgba(40, 167, 69, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  position: relative;
+  z-index: 2;
+}
+
+.service-banner-detail-image:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 12px 35px rgba(40, 167, 69, 0.3);
+  border-color: rgba(40, 167, 69, 0.5);
+}
+
+/* ========== Content Section ========== */
+.service-banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 5% 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.service-banner-content div {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(40, 167, 69, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #e9ecef;
+}
+
+.service-banner-content h1,
+.service-banner-content h2,
+.service-banner-content h3,
+.service-banner-content h4,
+.service-banner-content h5,
+.service-banner-content h6 {
+  color: #28a745;
+  margin: 32px 0 20px 0;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.service-banner-content h1 { font-size: 2.4rem; }
+.service-banner-content h2 { font-size: 2rem; }
+.service-banner-content h3 { font-size: 1.7rem; }
+.service-banner-content h4 { font-size: 1.4rem; }
+
+.service-banner-content p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.service-banner-content ul,
+.service-banner-content ol {
+  margin: 20px 0;
+  padding-left: 24px;
+}
+
+.service-banner-content li {
+  margin-bottom: 10px;
+  color: #dee2e6;
+}
+
+.service-banner-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 24px 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+.service-banner-content a {
+  color: #20c997;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.service-banner-content a:hover {
+  color: #17a2b8;
+  border-bottom-color: #17a2b8;
+}
+
+.service-banner-content blockquote {
+  border-left: 4px solid #28a745;
+  padding-left: 24px;
+  margin: 24px 0;
+  font-style: italic;
+  background: rgba(40, 167, 69, 0.1);
+  padding: 20px 24px;
+  border-radius: 8px;
+}
+
+.service-banner-content code {
+  background: rgba(40, 167, 69, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Consolas', monospace;
+  color: #20c997;
+}
+
+.service-banner-content pre {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 992px) {
+  .service-banner-detail-top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 30px 4% 50px;
+  }
+  
+  .service-banner-detail-top-right {
+    order: -1;
+  }
+  
+  .service-banner-detail-name {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    text-align: center;
+  }
+  
+  .service-banner-detail-title {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    padding: 16px 20px;
+    text-align: center;
+  }
+  
+  .service-banner-detail-download {
+    justify-content: center;
+  }
+  
+  .service-banner-content {
+    padding: 30px 4% 60px;
+  }
+  
+  .service-banner-content div {
+    padding: 30px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-banner-detail {
+    padding-top: 80px;
+  }
+  
+  .service-banner-detail-top {
+    gap: 30px;
+    padding: 20px 4% 40px;
+  }
+  
+  .service-banner-detail-name {
+    font-size: clamp(1.5rem, 7vw, 2.5rem);
+    margin-bottom: 12px;
+  }
+  
+  .service-banner-detail-title {
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+    padding: 14px 18px;
+    line-height: 1.5;
+  }
+  
+  .download-btn-nice {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  
+  .service-banner-content {
+    padding: 24px 4% 50px;
+  }
+  
+  .service-banner-content div {
+    padding: 24px 18px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  .service-banner-content h1 { font-size: 1.8rem; }
+  .service-banner-content h2 { font-size: 1.5rem; }
+  .service-banner-content h3 { font-size: 1.3rem; }
+  .service-banner-content h4 { font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+  .service-banner-detail-top {
+    padding: 16px 4% 32px;
+    gap: 24px;
+  }
+  
+  .service-banner-detail-name {
+    font-size: clamp(1.3rem, 8vw, 2rem);
+  }
+  
+  .service-banner-detail-title {
+    font-size: clamp(0.85rem, 4.5vw, 1rem);
+    padding: 12px 16px;
+  }
+  
+  .download-btn-nice {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+  
+  .download-btn-nice i {
+    font-size: 1.1rem;
+  }
+  
+  .service-banner-content {
+    padding: 20px 4% 40px;
+  }
+  
+  .service-banner-content div {
+    padding: 20px 16px;
+    font-size: 0.95rem;
+  }
+}
+
+/* ========== Loading States ========== */
+.service-banner-detail-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-size: 1.2rem;
+  color: #28a745;
+}
+
+.service-banner-detail-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-size: 1.2rem;
+  color: #dc3545;
+  text-align: center;
+}
+
+/* ========== Print Styles ========== */
+@media print {
+  .service-banner-detail {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .service-banner-detail::before {
+    display: none;
+  }
+  
+  .download-btn-nice {
+    display: none;
+  }
+  
+  .service-banner-detail-name {
+    background: none !important;
+    -webkit-text-fill-color: black !important;
+    color: black !important;
+  }
+}
